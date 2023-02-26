@@ -127,7 +127,7 @@ function Library:Window(title)
 		
 		ButtonContainer.Name = "ButtonContainer"
 		ButtonContainer.Parent = Container
-		ButtonContainer.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+		ButtonContainer.BackgroundColor3 = Color3.fromRGB(3, 155, 229)
 		ButtonContainer.BorderSizePixel = 0
 		ButtonContainer.Size = UDim2.new(0, 204, 0, 28)
 		
