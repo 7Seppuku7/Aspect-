@@ -77,7 +77,7 @@ function Library:Window(title)
 	Title.Size = UDim2.new(0, 174, 0, 20)
 	Title.Font = Enum.Font.GothamSemibold
 	Title.Text = title
-	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextColor3 = Color3.fromRGB(30, 30, 30)
 	Title.TextScaled = true
 	Title.TextSize = 14.000
 	Title.TextWrapped = true
@@ -133,7 +133,7 @@ function Library:Window(title)
 		
 		Button.Name = "Button"
 		Button.Parent = ButtonContainer
-		Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 		Button.BackgroundTransparency = 1.000
 		Button.Size = UDim2.new(0, 204, 0, 28)
 		Button.Font = Enum.Font.SourceSans
@@ -205,7 +205,7 @@ function Library:Window(title)
 		ToggleName.Size = UDim2.new(0, 169, 0, 20)
 		ToggleName.Font = Enum.Font.GothamSemibold
 		ToggleName.Text = name
-		ToggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleName.TextColor3 = Color3.fromRGB(30, 30, 30)
 		ToggleName.TextScaled = true
 		ToggleName.TextSize = 14.000
 		ToggleName.TextWrapped = true
@@ -218,7 +218,7 @@ function Library:Window(title)
 		Toggle.Position = UDim2.new(0.852941215, 0, 0.0666666627, 0)
 		Toggle.Size = UDim2.new(0, 25, 0, 23)
 		Toggle.AutoButtonColor = false
-		Toggle.Font = Enum.Font.SourceSans
+		Toggle.Font = Enum.Font.SourceSansBold
 		Toggle.Text = ""
 		Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 		Toggle.TextSize = 14.000
