@@ -55,18 +55,60 @@ local Other = Window:MakeTab({
 Combat:AddToggle({
 	Name = "Killaura",
 	Default = false,
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Killaura | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Killaura | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end     
+})
+
+Combat:AddSlider({
+	Name = "Killaura Reach",
+	Min = 0,
+	Max = 18,
+	Default = 4,
+	Color = Color3.fromRGB(196, 40, 28),
+	Increment = 1,
+	ValueName = "KillauraDistance",
 	Callback = function(Value)
-		print(Value)
+
 	end    
 })
+
 
 
 Combat:AddToggle({
 	Name = "Multiaura",
 	Default = false,
-	Callback = function(Value)
-		print(Value)
-	end    
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Multiaura | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Multiaura | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end  
 })
 
 
@@ -74,7 +116,7 @@ Combat:AddSlider({
 	Name = "Reach",
 	Min = 0,
 	Max = 18,
-	Default = 14,
+	Default = 4,
 	Color = Color3.fromRGB(196, 40, 28),
 	Increment = 1,
 	ValueName = "ReachDistance",
@@ -85,18 +127,15 @@ Combat:AddSlider({
 
 
 Combat:AddButton({
-	Name = "NoClickDelay (Mine)",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Combat:AddButton({
 	Name = "NoClickDelay (Rektsky)",
 	Callback = function()
-      		print("button pressed")
-  	end    
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "NoClickDelay | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+end     
 })
 
 
@@ -120,18 +159,46 @@ Player:AddSlider({
 Player:AddToggle({
 	Name = "Sprint",
 	Default = false,
-	Callback = function(Value)
-		workspace.Gravity = 0
-	end    
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Sprint | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "Sprint | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end      
 })
 
 
 Player:AddToggle({
-	Name = "Spider",
+	Name = "NoFall",
 	Default = false,
-	Callback = function(Value)
-workspace.Gravity = 192
-	end    
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "NoFall | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "NoFall | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end     
 })
 
 
@@ -139,7 +206,7 @@ Player:AddBind({
 	Name = "GravityFly",
 	Default = Enum.KeyCode.R,
 	Hold = false,
-	Callback = function()
+	Callback = function(callback)
  if callback then
 workspace.Gravity = 0
 else
@@ -173,10 +240,25 @@ Player:AddBind({
 
 --visual
 Visual:AddToggle({
-	Name = "NameTag",
+	Name = "NameTags",
 	Default = false,
-	Callback = function(Value)
-		print(Value)
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "NameTags | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "NameTags | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end   
 	end    
 })
 
@@ -184,9 +266,23 @@ Visual:AddToggle({
 Visual:AddToggle({
 	Name = "ESP",
 	Default = false,
-	Callback = function(Value)
-		print(Value)
-	end    
+	Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "ESP | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "ESP | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end     
 })
 
 
@@ -194,8 +290,23 @@ Visual:AddToggle({
 	Name = "PurpleAmbience",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
-	end    
+			Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "PurpleAmbience | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "PurpleAmbience | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end      
 })
 
 
@@ -203,6 +314,133 @@ Visual:AddToggle({
 	Name = "BlueAmbience",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
+			Callback = function(callback)
+		if callback then
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "BlueAmbience | Enabled!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+else
+		SeppukuHub:MakeNotification({
+	Name = "Seppuku",
+	Content = "BlueAmbience | Disabled.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+	end 
+end   
 	end    
+})
+
+
+
+
+--scripts
+Scripts:AddButton({
+	Name = "Keyboard",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Scripts:AddButton({
+	Name = "Animations",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Scripts:AddButton({
+	Name = "InfiniteYield",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+
+
+
+--other
+Other:AddButton({
+	Name = "VapeV4",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "RiseV4",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "Engoware",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "Future",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "RektSky",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "Darkrai",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "MoonLight",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "InfinityHub",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "PrismCracked",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+Other:AddButton({
+	Name = "LiquidBounceBETA V1.1.0",
+	Callback = function()
+      		print("button pressed")
+  	end    
 })
