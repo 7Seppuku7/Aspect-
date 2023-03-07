@@ -43,13 +43,6 @@ local Scripts = Window:MakeTab({
 })
 
 
-local Other = Window:MakeTab({
-	Name = "Other",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-
 
 --combat
 Combat:AddToggle({
@@ -384,90 +377,6 @@ Scripts:AddButton({
 Scripts:AddButton({
 	Name = "InfiniteYield",
 	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-
-
-
---other
-Other:AddButton({
-	Name = "VapeV4",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "RiseV4",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "Engoware",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "Future",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "RektSky",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "Darkrai",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "MoonLight",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "InfinityHub",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "PrismCracked",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-Other:AddButton({
-	Name = "LiquidBounceBETA V1.1.0",
-	Callback = function()
-      		print("button pressed")
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   	end    
 })
