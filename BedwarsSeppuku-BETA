@@ -158,8 +158,8 @@ Combat:AddSlider({
 	Color = Color3.fromRGB(196, 40, 28),
 	Increment = 1,
 	ValueName = "ReachDistance",
-	Callback = function(Value)
-		CombatConstant.RAYCAST_SWORD_CHARACTER_DISTANCE = reachvalue["Value"]
+	Callback = function(value)
+ 
 	end    
 })
 
@@ -188,7 +188,7 @@ Player:AddSlider({
 	Color = Color3.fromRGB(196, 40, 28),
 	Increment = 1,
 	ValueName = "PlayerSpeed",
-	Callback = function(Value)
+	Callback = function(value)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 	end    
 })
@@ -197,23 +197,9 @@ Player:AddSlider({
 Player:AddToggle({
 	Name = "Sprint",
 	Default = false,
-	Callback = function(callback)
-		if callback then
-		SeppukuHub:MakeNotification({
-	Name = "Seppuku",
-	Content = "Sprint | Enabled!",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-else
-		SeppukuHub:MakeNotification({
-	Name = "Seppuku",
-	Content = "Sprint | Disabled.",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-	end 
-end      
+	Callback = function(v)
+ 
+    end
 })
 
 
