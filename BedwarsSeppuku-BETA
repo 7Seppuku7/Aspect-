@@ -63,6 +63,32 @@ Combat:AddToggle({
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
+wait()
+		local player = game:GetService("Players")
+local lplr = player.LocalPlayer
+local cam = workspace.CurrentCamera
+local KnitClient = debug.getupvalue(require(lplr.PlayerScripts.TS.knit).setup, 6)
+local SwordCont = KnitClient.Controllers.SwordController
+
+local aura = false
+local DistVal = {["Value"] = 14}
+function Aura()
+	for i,v in pairs(game.Players:GetChildren()) do
+		if v.Character and v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("HumanoidRootPart") then
+			local mag = (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+			if mag <= DistVal["Value"] and v.Team ~= game.Players.LocalPlayer.Team and v.Character:FindFirstChild("Humanoid") then
+				if v.Character.Humanoid.Health > 0 then
+					aura = true
+                    SwordCont:swingSwordAtMouse()
+end
+end
+end
+end
+end
+
+game:GetService("RunService").Stepped:connect(function()
+Aura()
+end)
 else
 		SeppukuHub:MakeNotification({
 	Name = "Seppuku",
@@ -83,7 +109,7 @@ Combat:AddSlider({
 	Increment = 1,
 	ValueName = "KillauraDistance",
 	Callback = function(Value)
-
+local DistVal = {["Value"] = value}
 	end    
 })
 
@@ -100,6 +126,18 @@ Combat:AddToggle({
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
+wait()
+                    task.spawn(function()
+                        repeat
+                            task.wait(0.03)
+                                local plrs = GetAllNearestHumanoidToPosition(true, 17.999, 1, false)
+                                for i,plr in pairs(plrs) do
+                                    local selfpos = entity.character.HumanoidRootPart.Position
+                                    local newpos = plr.RootPart.Position
+                                    bedwars["ClientHandler"]:Get(bedwars["PaintRemote"]):SendToServer(selfpos, CFrame.lookAt(selfpos, newpos).lookVector)
+                                end
+                        until Multiaura["Enabled"] == false
+                    end)
 else
 		SeppukuHub:MakeNotification({
 	Name = "Seppuku",
@@ -121,7 +159,7 @@ Combat:AddSlider({
 	Increment = 1,
 	ValueName = "ReachDistance",
 	Callback = function(Value)
-		print(Value)
+		CombatConstant.RAYCAST_SWORD_CHARACTER_DISTANCE = reachvalue["Value"]
 	end    
 })
 
@@ -151,7 +189,7 @@ Player:AddSlider({
 	Increment = 1,
 	ValueName = "PlayerSpeed",
 	Callback = function(Value)
-		print(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 	end    
 })
 
@@ -190,6 +228,9 @@ Player:AddToggle({
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
+while wait(0.3) do
+game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit:FireServer()
+end
 else
 		SeppukuHub:MakeNotification({
 	Name = "Seppuku",
@@ -203,16 +244,16 @@ end
 
 
 Player:AddBind({
-	Name = "GravityFly",
+	Name = "Fly (hold)",
 	Default = Enum.KeyCode.R,
-	Hold = false,
+	Hold = true,
 	Callback = function(callback)
  if callback then
-workspace.Gravity = 0
+ workspace.Gravity = 1
 else
-workpsace.Gravity = 192
-end
-end   
+ workspace.Gravity = 192
+end 
+end 
 })
 
 
@@ -258,8 +299,7 @@ else
 	Time = 5
 })
 	end 
-end   
-	end    
+end     
 })
 
 
@@ -306,7 +346,8 @@ else
 	Time = 5
 })
 	end 
-end      
+end  
+end    
 })
 
 
@@ -331,7 +372,7 @@ else
 })
 	end 
 end   
-	end    
+end  
 })
 
 
