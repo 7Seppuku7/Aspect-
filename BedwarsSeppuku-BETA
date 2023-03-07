@@ -364,7 +364,7 @@ Scripts:AddButton({
 	Callback = function()
       		print("button pressed")
   	end    
-}))
+})
 
 
 Scripts:AddButton({
